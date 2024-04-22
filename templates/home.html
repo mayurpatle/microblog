@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <title>Microblog </title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar__brand">
+            <img src="/static/11.1 microblog-logo.svg" alt="the microblog logo" class="navbar__logo">Microblog 
+        </div>
+        <ul class="navbar__navigation">
+            <li class="navbar__navigation-item"><a href="#" class="navbar__link">Recent</a></li>
+            <li class="navbar__navigation-item"><a href="#" class="navbar__link">Calender</a></li>
+
+        </ul>
+        
+
+
+    </header>
+    <main class="main">
+        <section>
+            <h1>Add new  Entry</h1>
+            <form class="form" action="/" method="POST">
+                <p class="form__input">
+                    <label for="entry" class="form__label"> Entry  Contents:</label>
+                    <textarea name="content" id="entry" class="form__textarea" aria-label="Entry Contents"></textarea>
+                </p>
+                <button type="submit" class="form__submit"> Add Entry</button>
+
+
+            </form>
+
+        </section>
+        <section>
+            <h1>Recent Post</h1>
+
+            {% for entry  in  entries%}
+            <article class="entry">
+                <div>
+                    <h2 class="entry__title"> {{entry[0]  | truncate(10, True)}}</h2>
+                    <time datetime="{{entry[1]}}" class="entry__date">~ {{entry[1]}}</time>
+                </div>
+                <p class="entry__content"> {{ entry[0] }}</p>
+            </article>
+            {% endfor %}
+
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer__content">
+            <section class="left">
+                <a href="" class="footer__item">Made  by Mayur Patle</a>
+                <a href="" class="footer__item"> Check out  my other Projects</a>
+            </section>
+            <section class="right">
+                <div class="footer__column">
+                    <a href="" class="footer__item">Recent</a>
+                    <a href="" class="footer__item">Calender</a>
+
+                </div>
+                <div class="footer__column">
+                    <a href="" class="footer__item">About</a>
+                    <a href="" class="footer__item">how this made</a>
+                    
+                </div>
+
+            </section>
+        </div>
+
+
+
+    </footer>
+    
+</body>
+</html>
