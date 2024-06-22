@@ -142,7 +142,9 @@ body {
     margin  : 50px  0 0 0 ; 
     border-top :  4px solid black ;  
     color : white ; 
-    font-size: 12px  ;  
+    font-size: 12px  ;
+    bottom :    0  ;  
+    position: sticky;  
     
 
 }

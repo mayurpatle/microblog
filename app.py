@@ -45,3 +45,5 @@ def Home():
     ]
     return render_template("home.html"  ,   entries  = entries_with_date )
 
+if __name__ == "__main__":
+    app.run(debug=True)
